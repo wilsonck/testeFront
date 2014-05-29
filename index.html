@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html ng-app>
+<head lang="pt-br">
+	<meta charset="utf-8">
+	<title>Lista de Exercícios</title>
+
+	<link rel="stylesheet" href="css/estilo.css">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700,300italic' rel='stylesheet' type='text/css'>
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+
+</head>
+<body ng-controller="mainController">
+
+	<div class="content">
+		<h1>Log de Exercícios</h1>
+		<h2>Adicionar Exercício</h2>
+		<form class="form-inline" name="formContato">
+				<span>Tempo:</span>			
+				<input type="text" ng-model="input.tempo">
+				<br>	
+				<span>Tipo:</span>
+			  	<input type="text" ng-model="input.tipo">
+				<br>	
+				<span>Data:</span>
+			  	<input type="text" ng-model="input.data">
+			    <button ng-click="addExercise()">Add</button>
+    	</form>
+	</div>
+
+	<div class="content">
+		<table>
+			<thead>
+    			<tr>
+    				<th>Tempo</th>
+    				<th>Tipo</th>
+    				<th>Data</th>
+    				<th>Excluir</th>
+    			</tr>
+			</thead>
+			<tbody>
+	    		<tr ng-repeat="exercise in dataExercises">
+		    		<td>{{ exercise.tempo }}</td>
+		    		<td>{{ exercise.tipo }}</td>
+		    		<td>{{ exercise.data }}</td>
+		    		<td><a href="#" ng-click="deleteExercise(exercise)">excluir</a></td>
+	    		</tr>
+		    </tbody>
+    	</table>
+	</div>
+
+	<div class="content">
+		<h3>Você já fez {{totalHours}} horas de exercícios</h3>
+	</div>
+
+
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.min.js"></script>
+<script src="js/controllers.js"></script>
+
+</html>

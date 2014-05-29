@@ -8,12 +8,12 @@ function mainController($scope){
 
 	$scope.addExercise = function () {
 		idExercise ++;
-		$scope.totalHours += Number($scope.input.tempo);
+		$scope.totalHours += Number($scope.form.tempo);
 		$scope.dataExercises.push({
 			id: idExercise,
-			tempo: $scope.input.tempo,
-	    	tipo: $scope.input.tipo, 
-	    	data: $scope.input.data});
+			tempo: $scope.form.tempo,
+	    	tipo: $scope.form.tipo, 
+	    	data: $scope.form.data});
 	};
 
 

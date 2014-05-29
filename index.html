@@ -5,6 +5,7 @@
 	<title>Lista de Exercícios</title>
 
 	<link rel="stylesheet" href="css/estilo.css">
+	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700,300italic' rel='stylesheet' type='text/css'>
 
 	<!--[if lt IE 9]>
@@ -14,42 +15,52 @@
 </head>
 <body ng-controller="mainController">
 
-	<div class="content">
-		<h1>Log de Exercícios</h1>
-		<h2>Adicionar Exercício</h2>
-		<form class="form-inline" name="formContato">
-				<span>Tempo:</span>			
-				<input type="text" ng-model="input.tempo">
-				<br>	
-				<span>Tipo:</span>
-			  	<input type="text" ng-model="input.tipo">
-				<br>	
-				<span>Data:</span>
-			  	<input type="text" ng-model="input.data">
-			    <button ng-click="addExercise()">Add</button>
-    	</form>
-	</div>
+	<header>
+		<div class="content">
+			<h1><i class="fa fa-car"></i> Log de Exercícios</h1>
+		</div>
+	</header>
 
-	<div class="content">
-		<table>
-			<thead>
-    			<tr>
-    				<th>Tempo</th>
-    				<th>Tipo</th>
-    				<th>Data</th>
-    				<th>Excluir</th>
-    			</tr>
-			</thead>
-			<tbody>
-	    		<tr ng-repeat="exercise in dataExercises">
-		    		<td>{{ exercise.tempo }}</td>
-		    		<td>{{ exercise.tipo }}</td>
-		    		<td>{{ exercise.data }}</td>
-		    		<td><a href="#" ng-click="deleteExercise(exercise)">excluir</a></td>
-	    		</tr>
-		    </tbody>
-    	</table>
-	</div>
+	<section>
+		<div id="form" class="content">
+			<h2>Adicionar Exercício</h2>
+			<form class="form-inline" name="formContato">		
+				<i class="fa fa-clock-o"></i> <input placeholder="Tempo" type="text" ng-model="form.tempo">
+				<i class="fa fa-flag"></i> <select ng-model="form.tipo">
+				    <option selected="">Tipo de Exercício</option>
+				    <option>Corrida</option>
+				    <option>Natação</option>
+				    <option>Bicicleta</option>
+				    <option>Boxe</option>
+				</select>
+			  	<i class="fa fa-calendar"></i> <input placeholder="Data" type="text" ng-model="form.data">
+			    <button ng-click="addExercise()">Add</button>
+	    	</form>
+		</div>
+	</section>
+
+	<section>
+		<div id="listExercises" class="content">
+			<table>
+				<thead>
+	    			<tr>
+	    				<th>Tempo</th>
+	    				<th>Tipo</th>
+	    				<th>Data</th>
+	    				<th>Excluir</th>
+	    			</tr>
+				</thead>
+				<tbody>
+		    		<tr ng-repeat="exercise in dataExercises">
+			    		<td>{{ exercise.tempo }}</td>
+			    		<td>{{ exercise.tipo }}</td>
+			    		<td>{{ exercise.data }}</td>
+			    		<td><a href="#" ng-click="deleteExercise(exercise)">excluir</a></td>
+		    		</tr>
+			    </tbody>
+	    	</table>
+		</div>
+	</section>
 
 	<div class="content">
 		<h3>Você já fez {{totalHours}} horas de exercícios</h3>

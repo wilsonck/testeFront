@@ -27,12 +27,7 @@
 			<form class="form-inline" name="formContato">		
 				<i class="fa fa-clock-o"></i> <input required type="number" onkeypress="return SomenteNumero(event);" name="tempo" class="input_time" maxlength="2" placeholder="Tempo" type="text" min=1 ng-model="form.tempo" ng-required="true">
 				<i class="fa fa-flag"></i>
-				<select name="tipoexercicio" name="tipo" ng-model="form.tipo" >
-					<option ng-selected="Corrida">Corrida</option>
-					<option>Natação</option>
-					<option>Bicicleta</option>
-					<option>Boxe</option>
-				</select>
+				<select ng-model="form.tipo" name="tipoexercicio" required ng-options='exercise.value as exercise.name for exercise in typeExercises'></select>
 			  	<i class="fa fa-calendar"></i> <input type="date" placeholder="Data" name="data" type="text" ng-model="form.data" ng-required="true">
 			    <button class="btAdd" ng-click="addExercise()" ng-disabled="formContato.$invalid">Add</button>
 

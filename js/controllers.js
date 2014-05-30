@@ -16,6 +16,14 @@ function mainController($scope){
 	    	data: $scope.form.data});
 	};
 
+	$scope.typeExercises = [
+    	{ name: 'Corrida', value: 'corrida' }, 
+   	 	{ name: 'Natação', value: 'natação' }, 
+    	{ name: 'Bicicleta', value: 'bicicleta' },
+    	{ name: 'Boxe', value: 'boxe' }
+    ];
+
+    $scope.form = {tipo : $scope.typeExercises[0].value};
 
 	$scope.deleteExercise = function(objectExercise){
 		$scope.totalHours -= Number(objectExercise.tempo);

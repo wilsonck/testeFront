@@ -43,18 +43,21 @@
 	</section>
 
 	<section>
-		<div class="content listExercises">
+		<div class="content listExercises ovfh">
 			<div class="row titleList">
-				<div class="time">Tempo</div>
-				<div class="type">Tipo</div>
-				<div class="date">Data</div>
+				<div class="time order" ng-click="Order('tempo')"><i class="fa fa-sort"></i>Tempo</div>
+				<div class="type order" ng-click="Order('tipo')"><i class="fa fa-sort"></i>Tipo</div>
+				<div class="date order" ng-click="Order('data')"><i class="fa fa-sort"></i>Data</div>
 				<div class="delete">Excluir</div>
 			</div>
-			<div class="row" ng-repeat="exercise in dataExercises">
+			<div class="row" ng-repeat="exercise in dataExercises | orderBy:sort:reverse" ng-class-even="'row-grain'">
 				<div class="time"><span data-ng-bind="exercise.tempo"></span></div>
 				<div class="type"><span data-ng-bind="exercise.tipo"></span></div>
 				<div class="date"><span data-ng-bind="exercise.data"></span></div>
 				<div class="delete"><a ng-click="deleteExercise(exercise)"><i class="fa fa-minus-square-o"></i></a></div>
+			</div>
+			<div class="row" ng-show="dataExercises.length === 0">
+				<p>Nenhum exercício incluído até o momento !</p>
 			</div>
 		</div>
 	</section>

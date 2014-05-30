@@ -249,25 +249,40 @@ body {
   padding: 1px 10px;
 }
 .form .error {
-  width: 60%;
+  width: 70%;
   font-size: 2em;
   background: rgba(243, 117, 103, 0.5);
   border: 1px dotted #3d3d3d;
   margin: 15px auto;
   display: block;
 }
+.listExercises {
+  margin-top: 30px;
+  -webkit-border-top-left-radius: 10px;
+  -webkit-border-top-right-radius: 10px;
+  -moz-border-radius-topleft: 10px;
+  background: #0080ff !important;
+  -moz-box-shadow: 3px 3px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 3px 3px rgba(0, 0, 0, 0.5);
+  box-shadow: 3px 3px rgba(0, 0, 0, 0.5);
+}
+.listExercises p {
+  font-size: 1.6em;
+}
 .listExercises .titleList {
   -webkit-border-top-left-radius: 10px;
   -webkit-border-top-right-radius: 10px;
   -moz-border-radius-topleft: 10px;
   -moz-border-radius-topright: 10px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  border: 1px solid #dcdcdc;
-  margin-top: 30px;
-  background: #0080ff;
+  background: #0080ff !important;
   color: #fff;
   font-size: 2em;
+}
+.listExercises .titleList .order {
+  cursor: pointer;
+}
+.listExercises .row-grain {
+  background: #cbddee !important;
 }
 .listExercises .row {
   float: left;
@@ -276,15 +291,19 @@ body {
   border-right: 1px solid #dcdcdc;
   border-bottom: 1px solid #dcdcdc;
   padding: 10px 0;
+  background: #fff;
+}
+.listExercises .row span {
+  font-size: 1.8em;
 }
 .listExercises .row div {
   float: left;
   width: 100px;
   text-align: center;
+  height: 20px;
+  line-height: 20px;
 }
-.listExercises .row .type {
-  width: 200px;
-}
+.listExercises .row .type,
 .listExercises .row .date {
   width: 200px;
 }
@@ -292,10 +311,22 @@ body {
   cursor: pointer;
 }
 .listExercises .row .delete i {
+  font-size: 2em;
   color: #B95E70;
 }
+.result {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  background: #dcdcdc;
+  padding: 5px 0;
+  -moz-box-shadow: 3px 3px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 3px 3px rgba(0, 0, 0, 0.5);
+  box-shadow: 3px 3px rgba(0, 0, 0, 0.5);
+  margin-top: 25px;
+}
 .result h3 {
-  font-size: 2em;
+  font-size: 2.2em;
   color: #000;
   font-weight: normal;
   margin: 10px 0;

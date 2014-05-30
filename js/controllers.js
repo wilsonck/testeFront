@@ -22,7 +22,20 @@ function mainController($scope){
 		$scope.dataExercises.splice($scope.dataExercises.indexOf(objectExercise), 1);		
 	}
 
+	$scope.sort = "";
+	$scope.reverse = false;
 
+	$scope.Order = function (typeorder) {
+
+	    if ($scope.sort === typeorder){
+	      $scope.reverse = !$scope.reverse;
+	      return;
+	    };
+
+	    $scope.sort = typeorder;
+	    $scope.reverse = false;
+
+	};
 
 
 

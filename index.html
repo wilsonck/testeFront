@@ -28,7 +28,7 @@
 				<i class="fa fa-clock-o"></i> <input required type="number" onkeypress="return SomenteNumero(event);" name="tempo" class="input_time" maxlength="2" placeholder="Tempo" type="text" min=1 ng-model="form.tempo" ng-required="true">
 				<i class="fa fa-flag"></i>
 				<select ng-model="form.tipo" name="tipoexercicio" required ng-options='exercise.value as exercise.name for exercise in typeExercises'></select>
-			  	<i class="fa fa-calendar"></i> <input type="date" placeholder="Data" name="data" type="text" ng-model="form.data" ng-required="true">
+			  	<i class="fa fa-calendar"></i> <input OnKeyUp="mascara_data(this)" type="date" placeholder="Data" maxlength="10" name="data" ng-model="form.data" ng-required="true">
 			    <button class="btAdd" ng-click="addExercise()" ng-disabled="formContato.$invalid">Add</button>
 
 			    <span class="error ovfh" ng-hide="formContato.tempo.$valid">Preencha o seu tempo de exercício !</span>
@@ -57,9 +57,12 @@
 		</div>
 	</section>
 
-	<div class="content result ovfh">
-		<h3>Você já fez <span data-ng-bind="totalHours"></span> horas de exercícios</h3>
-	</div>
+	<section>
+		<div class="content result ovfh">
+			<h3>Você já fez <span data-ng-bind="totalHours"></span> horas de exercícios</h3>
+		</div>
+	</section>
+
 
 
 </body>

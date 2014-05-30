@@ -45,6 +45,4 @@ function mainController($scope){
 
 	};
 
-
-
 } 

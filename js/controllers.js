@@ -18,6 +18,7 @@ function mainController($scope){
 
 
 	$scope.deleteExercise = function(objectExercise){
+		$scope.totalHours -= Number(objectExercise.tempo);
 		$scope.dataExercises.splice($scope.dataExercises.indexOf(objectExercise), 1);		
 	}
 

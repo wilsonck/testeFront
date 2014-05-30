@@ -17,53 +17,50 @@
 
 	<header>
 		<div class="content">
-			<h1><i class="fa fa-car"></i> Log de Exercícios</h1>
+			<h1> Log de Exercícios</h1>
 		</div>
 	</header>
 
 	<section>
-		<div id="form" class="content">
+		<div class="form content">
 			<h2>Adicionar Exercício</h2>
 			<form class="form-inline" name="formContato">		
-				<i class="fa fa-clock-o"></i> <input placeholder="Tempo" type="text" ng-model="form.tempo">
-				<i class="fa fa-flag"></i> <select ng-model="form.tipo">
-				    <option selected="">Tipo de Exercício</option>
-				    <option>Corrida</option>
-				    <option>Natação</option>
-				    <option>Bicicleta</option>
-				    <option>Boxe</option>
+				<i class="fa fa-clock-o"></i> <input required type="number" class="input_time" maxlength="2" placeholder="Tempo" type="text" ng-model="form.tempo" ng-required="true">
+				<i class="fa fa-flag"></i>
+				<select name="tipoexercicio" ng-model="form.tipo">
+					<option ng-selected="selected">Corrida</option>
+					<option>Natação</option>
+					<option>Bicicleta</option>
+					<option>Boxe</option>
 				</select>
-			  	<i class="fa fa-calendar"></i> <input placeholder="Data" type="text" ng-model="form.data">
-			    <button ng-click="addExercise()">Add</button>
+			  	<i class="fa fa-calendar"></i> <input placeholder="Data" type="text" ng-model="form.data" ng-required="true">
+			    <button class="btAdd" ng-click="addExercise()" ng-disabled="formContato.$invalid">Add</button>
+
+			    <span ng-hide="formContato.tempo.$valid">Preencha o seu tempo de exercício !</span>
+			    <span ng-hide="formContato.data.$valid">Preencha a data que o exercício foi feito!</span>
 	    	</form>
 		</div>
 	</section>
 
 	<section>
-		<div id="listExercises" class="content">
-			<table>
-				<thead>
-	    			<tr>
-	    				<th>Tempo</th>
-	    				<th>Tipo</th>
-	    				<th>Data</th>
-	    				<th>Excluir</th>
-	    			</tr>
-				</thead>
-				<tbody>
-		    		<tr ng-repeat="exercise in dataExercises">
-			    		<td>{{ exercise.tempo }}</td>
-			    		<td>{{ exercise.tipo }}</td>
-			    		<td>{{ exercise.data }}</td>
-			    		<td><a href="#" ng-click="deleteExercise(exercise)">excluir</a></td>
-		    		</tr>
-			    </tbody>
-	    	</table>
+		<div class="content listExercises">
+			<div class="row titleList">
+				<div class="time">Tempo</div>
+				<div class="type">Tipo</div>
+				<div class="date">Data</div>
+				<div class="delete">Excluir</div>
+			</div>
+			<div class="row" ng-repeat="exercise in dataExercises">
+				<div class="time"><span data-ng-bind="exercise.tempo"></span></div>
+				<div class="type"><span data-ng-bind="exercise.tipo"></span></div>
+				<div class="date"><span data-ng-bind="exercise.data"></span></div>
+				<div class="delete"><a ng-click="deleteExercise(exercise)"><i class="fa fa-minus-square-o"></i></a></div>
+			</div>
 		</div>
 	</section>
 
-	<div class="content">
-		<h3>Você já fez {{totalHours}} horas de exercícios</h3>
+	<div class="content result ovfh">
+		<h3>Você já fez <span data-ng-bind="totalHours"></span> horas de exercícios</h3>
 	</div>
 
 

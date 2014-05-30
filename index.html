@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html ng-app>
-<head lang="pt-br">
+<head>
 	<meta charset="utf-8">
 	<title>Lista de Exercícios</title>
 
@@ -16,28 +16,28 @@
 <body ng-controller="mainController">
 
 	<header>
-		<div class="content">
+		<div class="content header">
 			<h1> Log de Exercícios</h1>
 		</div>
 	</header>
 
 	<section>
-		<div class="form content">
+		<div class="form content ovfh">
 			<h2>Adicionar Exercício</h2>
 			<form class="form-inline" name="formContato">		
-				<i class="fa fa-clock-o"></i> <input required type="number" class="input_time" maxlength="2" placeholder="Tempo" type="text" ng-model="form.tempo" ng-required="true">
+				<i class="fa fa-clock-o"></i> <input required type="number" onkeypress="return SomenteNumero(event);" name="tempo" class="input_time" maxlength="2" placeholder="Tempo" type="text" min=1 ng-model="form.tempo" ng-required="true">
 				<i class="fa fa-flag"></i>
-				<select name="tipoexercicio" ng-model="form.tipo">
-					<option ng-selected="selected">Corrida</option>
+				<select name="tipoexercicio" name="tipo" ng-model="form.tipo" >
+					<option ng-selected="Corrida">Corrida</option>
 					<option>Natação</option>
 					<option>Bicicleta</option>
 					<option>Boxe</option>
 				</select>
-			  	<i class="fa fa-calendar"></i> <input placeholder="Data" type="text" ng-model="form.data" ng-required="true">
+			  	<i class="fa fa-calendar"></i> <input type="date" placeholder="Data" name="data" type="text" ng-model="form.data" ng-required="true">
 			    <button class="btAdd" ng-click="addExercise()" ng-disabled="formContato.$invalid">Add</button>
 
-			    <span ng-hide="formContato.tempo.$valid">Preencha o seu tempo de exercício !</span>
-			    <span ng-hide="formContato.data.$valid">Preencha a data que o exercício foi feito!</span>
+			    <span class="error ovfh" ng-hide="formContato.tempo.$valid">Preencha o seu tempo de exercício !</span>
+			    <span class="error ovfh" ng-hide="formContato.data.$valid">Preencha a data de exercício !</span>
 	    	</form>
 		</div>
 	</section>
@@ -68,5 +68,6 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.min.js"></script>
 <script src="js/controllers.js"></script>
+<script src="js/functions.js"></script>
 
 </html>

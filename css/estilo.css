@@ -179,7 +179,7 @@ img {
 body {
   font-family: 'Open Sans Condensed', sans-serif;
   text-align: center;
-  background: #fff;
+  background: #f5f5f5;
   margin: 0;
   font-size: 10px;
 }
@@ -190,26 +190,47 @@ body {
   width: 600px;
   margin: 0 auto;
 }
-header h1 {
-  color: #3F3F3F;
-  font-size: 3em;
+.header {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  moz-box-shadow: 3px 3px #054584;
+  -webkit-box-shadow: 3px 3px #054584;
+  box-shadow: 3px 3px #054584;
+  background: #0080ff;
+  padding: 5px 0;
+  margin: 30px auto;
+}
+.header h1 {
+  color: #fff;
+  font-size: 3.5em;
   padding: 20px 0;
   font-weight: normal;
 }
+.form {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  background: #dcdcdc;
+  padding: 20px 0;
+  -moz-box-shadow: 3px 3px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 3px 3px rgba(0, 0, 0, 0.5);
+  box-shadow: 3px 3px rgba(0, 0, 0, 0.5);
+}
 .form h2 {
-  font-size: 2em;
-  color: #129E84;
-  margin: 10px 0 20px;
+  font-size: 3em;
+  color: #00458a;
+  margin: 5px 0 5px;
   font-weight: normal;
 }
 .form i {
   font-size: 1.8em;
   margin: 0 10px;
-  color: #129E84;
+  color: rgba(0, 0, 0, 0.5);
 }
 .form input {
   font-family: 'Open Sans Condensed', sans-serif;
-  border: 1px solid #129E84;
+  border: 1px solid rgba(0, 0, 0, 0.5);
   font-size: 1.6em;
 }
 .form .input_time {
@@ -218,10 +239,22 @@ header h1 {
 }
 .form .btAdd {
   font-family: 'Open Sans Condensed', sans-serif;
-  background: #129E84;
+  background: #0080ff;
   color: #fff;
   border: none;
   font-size: 1.6em;
+  -moz-box-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+  padding: 1px 10px;
+}
+.form .error {
+  width: 60%;
+  font-size: 2em;
+  background: rgba(243, 117, 103, 0.5);
+  border: 1px dotted #3d3d3d;
+  margin: 15px auto;
+  display: block;
 }
 .listExercises .titleList {
   -webkit-border-top-left-radius: 10px;
@@ -230,22 +263,24 @@ header h1 {
   -moz-border-radius-topright: 10px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  border: 1px solid #000;
+  border: 1px solid #dcdcdc;
   margin-top: 30px;
+  background: #0080ff;
+  color: #fff;
+  font-size: 2em;
 }
 .listExercises .row {
   float: left;
   width: 100%;
-  border-left: 1px solid #000;
-  border-right: 1px solid #000;
-  border-bottom: 1px solid #000;
+  border-left: 1px solid #dcdcdc;
+  border-right: 1px solid #dcdcdc;
+  border-bottom: 1px solid #dcdcdc;
   padding: 10px 0;
 }
 .listExercises .row div {
   float: left;
   width: 100px;
   text-align: center;
-  font-size: 14px;
 }
 .listExercises .row .type {
   width: 200px;
@@ -254,12 +289,14 @@ header h1 {
   width: 200px;
 }
 .listExercises .row .delete {
-  color: #B95E70;
   cursor: pointer;
+}
+.listExercises .row .delete i {
+  color: #B95E70;
 }
 .result h3 {
   font-size: 2em;
-  color: #B95E70;
+  color: #000;
   font-weight: normal;
   margin: 10px 0;
 }

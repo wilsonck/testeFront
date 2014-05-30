@@ -3,7 +3,7 @@
 body{
 	font-family: 'Open Sans Condensed', sans-serif;
 	text-align: center;
-	background: #fff;
+	background: #f5f5f5;
 	margin:0;
 	font-size:10px;
 }
@@ -17,30 +17,49 @@ body{
 	margin:0 auto;
 }
 
-header{
+.header{
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+
+	moz-box-shadow: 3px 3px rgba(5,69,132,1);
+	-webkit-box-shadow: 3px 3px rgba(5,69,132,1);
+	box-shadow: 3px 3px rgba(5,69,132,1);
+
+	background: #0080ff;
+	padding:5px 0;
+	margin:30px auto;
 	h1{ 
-		color:#3F3F3F;
-		font-size:3em;
+		color:#fff;
+		font-size:3.5em;
 		padding:20px 0;
 		font-weight: normal;
 	}
 }
 
 .form{
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	background: #dcdcdc;
+	padding:20px 0;
+	-moz-box-shadow: 3px 3px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 3px 3px rgba(0,0,0,0.5);
+	box-shadow: 3px 3px rgba(0,0,0,0.5);
 	h2{
-		font-size:2em;
-		color:#129E84;
-		margin:10px 0 20px;
+		font-size:3em;
+		color:#00458a;
+		margin:5px 0 5px;
 		font-weight: normal;
 	}
 	i{
 		font-size:1.8em;
 		margin:0 10px;
-		color:#129E84;
+		color:rgba(0,0,0,0.5);
 	}
 	input{
 		font-family: 'Open Sans Condensed', sans-serif;
-		border:1px solid #129E84;
+		border:1px solid rgba(0,0,0,0.5);
 		font-size:1.6em;
 	}
 	.input_time{
@@ -49,10 +68,22 @@ header{
 	}
 	.btAdd{
 		font-family: 'Open Sans Condensed', sans-serif;
-		background: #129E84;
+		background: #0080ff;
 		color:#fff;
 		border:none;
 		font-size:1.6em;
+		-moz-box-shadow: 1px 1px rgba(0,0,0,0.5);
+		-webkit-box-shadow: 1px 1px rgba(0,0,0,0.5);
+		box-shadow: 1px 1px rgba(0,0,0,0.5);
+		padding:1px 10px;
+	}
+	.error{
+		width:60%;
+		font-size:2em;
+		background: rgba(243,117,103, 0.5);
+		border:1px dotted #3d3d3d;
+		margin:15px auto;
+		display: block;
 	}
 }
 
@@ -64,21 +95,23 @@ header{
 		-moz-border-radius-topright: 10px;
 		border-top-left-radius: 10px;
 		border-top-right-radius: 10px;
-		border:1px solid #000;
+		border:1px solid #dcdcdc;
 		margin-top:30px;
+		background: #0080ff;
+		color:#fff;
+		font-size:2em;
 	}
 	.row{
 		float:left;
 		width:100%;
-		border-left: 1px solid #000;
-		border-right: 1px solid #000;
-		border-bottom: 1px solid #000;
+		border-left: 1px solid #dcdcdc;
+		border-right: 1px solid #dcdcdc;
+		border-bottom: 1px solid #dcdcdc;
 		padding:10px 0;
 		div{
 			float:left;
 			width:100px;
 			text-align:center;
-			font-size: 14px;
 		}
 		.time{
 			
@@ -90,7 +123,10 @@ header{
 			width:200px;
 		}
 		.delete{
-			color:#B95E70;
+			i{
+				color:#B95E70;
+			}
+			
 			cursor: pointer;
 		}
 	}
@@ -98,7 +134,7 @@ header{
 .result{
 	h3{
 		font-size:2em;
-		color:#B95E70;
+		color:#000;
 		font-weight: normal;
 		margin:10px 0;
 		span{

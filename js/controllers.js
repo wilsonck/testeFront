@@ -1,7 +1,7 @@
 "use strict";
 
 function mainController($scope){
- 	
+
 	$scope.dataExercises = [];
 	$scope.totalHours = 0;
 	var idExercise = 0;
